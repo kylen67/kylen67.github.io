@@ -12,7 +12,7 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   display: block; /* Change flex to block */
-  height: 50vh; /* Ensure the full viewport height */
+  height: 100vh; /* Ensure the full viewport height */
   overflow-x: hidden;
   /*padding-top: 40px; /* Add padding to body */
 }
@@ -21,38 +21,75 @@ body{
     background-image: url('./dict/images/main.jpg'); /* Set your background image path */
     background-size: cover;
     background-position: center;
-    padding: 50px 0; /* Adjust as necessary */
+    padding: 10px 0; /* Adjust as necessary */
     text-align: center;
+	height: auto;
 }
 
 .text-intro {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* 水平居中 */
-  justify-content: center; /* 垂直居中 */
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 80px; /* 保留防止与导航栏重叠的间距 */
-  flex-wrap: wrap;
-  z-index: 1;
-  height: 60vh; /* 让容器占满整个视口高度，从而垂直居中内容 */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontal centering */
+    justify-content: center; /* Vertical centering */
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 40px; /* Leave margin to prevent overlap with navbar */
+    flex-wrap: wrap;
+    z-index: 1;
+    height: 50vh; 
 }
 
 .text-intro .intro h1 {
-  text-align: center; /* 文本居中 */
-  font-size: 80px;
-  color: #000000;
-  font-weight: 600;
-  margin: 20px; /* 保持四边均匀的20px间距 */
+    text-align: center; /* Center text */
+    font-size: 80px;
+    color: #000000;
+    font-weight: 600;
+    margin: 20px; /* Even 20px margin on all sides */
+    
 }
 
 .text-intro .intro h2 {
-  text-align: center; /* 文本居中 */
-  font-size: 60px;
-  color: #111111;
-  font-weight: 400;
-  margin: 20px; /* 保持四边均匀的20px间距 */
+    text-align: center; /* Center text */
+    font-size: 60px;
+    color: #111111;
+    font-weight: bold;
+    margin: 20px; /* Even 20px margin on all sides */
+    
+}
+
+.text-intro .intro h3 {
+    text-align: center; /* Center text */
+    font-size: 40px;
+    color: #111111;
+    font-weight: bold;
+    margin: 20px; /* Even 20px margin on all sides */
+   
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .text-intro .intro h1 {
+        font-size: 60px; /* Reduce font size on smaller screens */
+    }
+    .text-intro .intro h2 {
+        font-size: 50px; /* Reduce font size on smaller screens */
+    }
+	.text-intro .intro h3 {
+        font-size: 40px; /* Reduce font size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .text-intro .intro h1 {
+        font-size: 50px; /* Further reduce font size for mobile screens */
+    }
+    .text-intro .intro h2 {
+        font-size: 40px; /* Further reduce font size for mobile screens */
+    }
+    .text-intro .intro h3 {
+        font-size: 30px; /* Further reduce font size for mobile screens */
+    }
 }
 
 
@@ -131,7 +168,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255,255,1);
+  background-color: rgba(255, 255,255,0);
   padding: 20px 30px;
   color: white;
   position: fixed; /* Fix it at the top */
@@ -247,7 +284,7 @@ body{
 
   /* 菜单展开时的样式 */
   .navbar.open .menu-icon span:nth-child(1) {
-    top: 18px;
+ 
     width: 0%;
     left: 50%;
   }
