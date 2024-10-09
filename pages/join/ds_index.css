@@ -1,0 +1,249 @@
+/* General styling */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+	margin-top: 80px; /* 保留防止与导航栏重叠的间距 */
+	margin-bottom: 40px; /* 保留防止与导航栏重叠的间距 */
+}
+
+/* Step section styling */
+.step {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step h2 {
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 16px;
+    color: #666;
+}
+
+.step img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .step {
+        text-align: center;
+    }
+
+    .step h2 {
+        font-size: 20px;
+    }
+
+    .step p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .step img {
+        width: 90%;
+    }
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255,255,1);
+  padding: 20px 30px;
+  color: white;
+  position: fixed; /* Fix it at the top */
+  top: 0;
+  width: 100%;
+  z-index: 100; /* Make sure it's above other content */
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #232c53;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+  margin-right: 15px;
+    font-size: 15px;
+  font-weight: bold;
+}
+
+.navbar li a {
+  color: #777b91;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar li a:hover {
+  color: #141e46;
+}
+
+
+.buttons {
+  display: flex;
+}
+
+.buttons button {
+  width: 150px;  /* 设置按钮的宽度 */
+  height: 40px;  /* 设置按钮的高度 */
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #00FFFF;
+  border-radius: 12px; /* Makes the button edges rounded */
+}
+
+
+.login {
+  color: #232c53;
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+/* 添加响应式设计的样式 */
+@media screen and (max-width: 768px) {
+  .navbar {
+    position: relative;
+    padding: 10px 10px;
+  }
+
+  /* 在小屏幕上隐藏导航栏和搜索框等 */
+  .navbar ul,
+  .search-box,
+  .buttons {
+    display: none;
+  }
+
+  /* 显示汉堡式图标 */
+  .navbar .menu-icon {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .navbar .menu-icon span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #232c53;
+    border-radius: 4px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+
+  .navbar .menu-icon span:nth-child(1) {
+    top: 0px;
+  }
+
+  .navbar .menu-icon span:nth-child(2),
+  .navbar .menu-icon span:nth-child(3) {
+    top: 10px;
+  }
+
+  .navbar .menu-icon span:nth-child(4) {
+    top: 20px;
+  }
+
+  /* 菜单展开时的样式 */
+  .navbar.open .menu-icon span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .navbar.open .menu-icon span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  .navbar.open .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .navbar.open .menu-icon span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+
+  /* 展开菜单时的导航栏样式 */
+  .navbar.open ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar.open .search-box,
+  .navbar.open .buttons {
+    display: block;
+  }
+
+  .search-box,
+  .buttons {
+    display: block;
+  }
+
+  #navbarMenu {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: -200px;
+    text-align: center;
+  }
+
+  #navbarMenu li a {
+    font-size: 20px;
+  }
+}

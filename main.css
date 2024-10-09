@@ -1,0 +1,301 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block; /* Change flex to block */
+  height: 50vh; /* Ensure the full viewport height */
+  overflow-x: hidden;
+  /*padding-top: 40px; /* Add padding to body */
+}
+
+.intro-section {
+    background-image: url('./dict/images/main.jpg'); /* Set your background image path */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0; /* Adjust as necessary */
+    text-align: center;
+}
+
+.text-intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中 */
+  justify-content: center; /* 垂直居中 */
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 80px; /* 保留防止与导航栏重叠的间距 */
+  flex-wrap: wrap;
+  z-index: 1;
+  height: 60vh; /* 让容器占满整个视口高度，从而垂直居中内容 */
+}
+
+.text-intro .intro h1 {
+  text-align: center; /* 文本居中 */
+  font-size: 80px;
+  color: #000000;
+  font-weight: 600;
+  margin: 20px; /* 保持四边均匀的20px间距 */
+}
+
+.text-intro .intro h2 {
+  text-align: center; /* 文本居中 */
+  font-size: 60px;
+  color: #111111;
+  font-weight: 400;
+  margin: 20px; /* 保持四边均匀的20px间距 */
+}
+
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px; /* Add margin to avoid overlapping with navbar */
+  z-index: 1;
+}
+
+.container .card{
+  position: relative;
+  width: 280px;
+  height: 400px;
+  background-color: rgba(255, 255,255,0.1);
+  margin: 30px;
+  border-radius: 15px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255,0.5);
+  border-left: 1px solid rgba(255, 255, 255,0.5);
+  backdrop-filter: blur(5px);
+}
+
+.container .card .content{
+  padding: 20px;
+  text-align: center;
+}
+
+/* .container .card .content .hov{
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+} */
+
+/* .container .card:hover .content .hov{
+  transform: translateY(0);
+  opacity: 1;
+} */
+
+.container .card .content h3{
+  font-size: 40px;
+  color: 	#4169E1;
+  margin-top: -20px;
+}
+
+.container .card .content p{
+  text-align: justify;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 300;
+  margin: 20px 20px 0 20px;
+}  
+
+.container .card .content a{
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  margin-top: 15px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255,255,1);
+  padding: 20px 30px;
+  color: white;
+  position: fixed; /* Fix it at the top */
+  top: 0;
+  width: 100%;
+  z-index: 100; /* Make sure it's above other content */
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #232c53;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+  margin-right: 15px;
+    font-size: 15px;
+  font-weight: bold;
+}
+
+.navbar li a {
+  color: #777b91;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar li a:hover {
+  color: #141e46;
+}
+
+
+.buttons {
+  display: flex;
+}
+
+.buttons button {
+  width: 150px;  /* 设置按钮的宽度 */
+  height: 40px;  /* 设置按钮的高度 */
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #00FFFF;
+  border-radius: 12px; /* Makes the button edges rounded */
+}
+
+
+.login {
+  color: #232c53;
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+/* 添加响应式设计的样式 */
+@media screen and (max-width: 768px) {
+  .navbar {
+    position: relative;
+    padding: 10px 10px;
+  }
+
+  /* 在小屏幕上隐藏导航栏和搜索框等 */
+  .navbar ul,
+  .search-box,
+  .buttons {
+    display: none;
+  }
+
+  /* 显示汉堡式图标 */
+  .navbar .menu-icon {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .navbar .menu-icon span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #232c53;
+    border-radius: 4px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+
+  .navbar .menu-icon span:nth-child(1) {
+    top: 0px;
+  }
+
+  .navbar .menu-icon span:nth-child(2),
+  .navbar .menu-icon span:nth-child(3) {
+    top: 10px;
+  }
+
+  .navbar .menu-icon span:nth-child(4) {
+    top: 20px;
+  }
+
+  /* 菜单展开时的样式 */
+  .navbar.open .menu-icon span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .navbar.open .menu-icon span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  .navbar.open .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .navbar.open .menu-icon span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+
+  /* 展开菜单时的导航栏样式 */
+  .navbar.open ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar.open .search-box,
+  .navbar.open .buttons {
+    display: block;
+  }
+
+  .search-box,
+  .buttons {
+    display: block;
+  }
+
+  #navbarMenu {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: -200px;
+    text-align: center;
+  }
+
+  #navbarMenu li a {
+    font-size: 20px;
+  }
+}
