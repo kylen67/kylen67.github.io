@@ -44,7 +44,7 @@ body{
     text-align: center; /* Center text */
     font-size: 80px;
     color: #000000;
-    font-weight: 600;
+    font-weight: bold;
     margin: 20px; /* Even 20px margin on all sides */
     
 }
@@ -76,7 +76,7 @@ body{
         font-size: 50px; /* Reduce font size on smaller screens */
     }
 	.text-intro .intro h3 {
-        font-size: 40px; /* Reduce font size on smaller screens */
+        font-size: 30px; /* Reduce font size on smaller screens */
     }
 }
 
@@ -88,7 +88,7 @@ body{
         font-size: 40px; /* Further reduce font size for mobile screens */
     }
     .text-intro .intro h3 {
-        font-size: 30px; /* Further reduce font size for mobile screens */
+        font-size: 25px; /* Further reduce font size for mobile screens */
     }
 }
 
@@ -220,7 +220,7 @@ body{
   padding: 5px 10px;
   border: none;
   cursor: pointer;
-  background-color: #00FFFF;
+  background-color: #12cccc;
   border-radius: 12px; /* Makes the button edges rounded */
 }
 
@@ -228,7 +228,7 @@ body{
 .login {
   color: #232c53;
   background-color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -261,7 +261,7 @@ body{
     position: absolute;
     height: 4px;
     width: 100%;
-    background: #232c53;
+    background: #0ec4c4;
     border-radius: 4px;
     opacity: 1;
     left: 0;
@@ -284,9 +284,8 @@ body{
 
   /* 菜单展开时的样式 */
   .navbar.open .menu-icon span:nth-child(1) {
- 
     width: 0%;
-    left: 50%;
+    left: 100%;
   }
 
   .navbar.open .menu-icon span:nth-child(2) {
@@ -309,12 +308,10 @@ body{
     flex-direction: column;
   }
 
-  .navbar.open .search-box,
   .navbar.open .buttons {
     display: block;
   }
 
-  .search-box,
   .buttons {
     display: block;
   }
@@ -336,3 +333,50 @@ body{
     font-size: 20px;
   }
 }
+
+.spotlight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.spotlight .image {
+    margin-right: 20px;
+}
+
+.spotlight img {
+    max-width: 100%;
+    height: auto;
+}
+
+.spotlight .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.spotlight .content h3{
+	color: red;
+}
+
+
+@media (max-width: 768px) {
+    .spotlight {
+        flex-direction: column;
+		align-items: center; /* 小屏时整体居中 */
+    }
+    
+    .spotlight .image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+	
+	.spotlight .content {
+        align-items: center; /* 小屏时文字居中 */
+        text-align: center; /* 小屏时文字居中对齐 */
+    }
+}
+
